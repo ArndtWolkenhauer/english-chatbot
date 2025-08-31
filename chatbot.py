@@ -7,7 +7,8 @@ st.title("🤖 English Practice Chatbot")
 st.write("Talk to the bot in English for 15 minutes. It will evaluate your skills afterwards.")
 
 # OpenAI client (API key kommt gleich in Streamlit Cloud rein)
-client = OpenAI()
+import os
+client = OpenAI(api_key=os.environ["OPENAI_API_KEY"])
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
